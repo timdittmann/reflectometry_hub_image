@@ -14,8 +14,6 @@ RUN apt-get update -qq --yes > /dev/null && \
 RUN apt-get update && \
   apt-get install -y gfortran python3-pip unzip wget vim
 
-USER ${NB_USER}
-
 COPY environment.yml /tmp/
 
 RUN mamba env update --name ${CONDA_ENV} -f /tmp/environment.yml
@@ -26,6 +24,7 @@ RUN mamba remove -n ${CONDA_ENV} nb_conda_kernels
 COPY install-jupyter-extensions.bash /tmp/install-jupyter-extensions.bash
 RUN /tmp/install-jupyter-extensions.bash
 
+USER ${NB_USER}
 # Set bash as shell in terminado.
 # ADD jupyter_notebook_config.py  ${NB_PYTHON_PREFIX}/etc/jupyter/
 # Disable history.
