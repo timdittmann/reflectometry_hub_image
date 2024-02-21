@@ -13,10 +13,9 @@ dependencies:
   # Everyone wants to use nbgitpuller for everything, so let's do that
   - nbgitpuller=1.1.*
   # Add other packages here
-  - unzip
-  - gfortran
+  #- unzip
+  #- gfortran
   - pip
-  - wget
+  #- wget
   - pip:
-    # works for regular pip packages
     - gnssrefl
