@@ -24,4 +24,4 @@ RUN /tmp/install-jupyter-extensions.bash
 # Set bash as shell in terminado.
 # ADD jupyter_notebook_config.py  ${NB_PYTHON_PREFIX}/etc/jupyter/
 # Disable history.
-ADD ipython_config.py ${NB_PYTHON_PREFIX}/etc/ipython/
+# ADD ipython_config.py ${NB_PYTHON_PREFIX}/etc/ipython/
