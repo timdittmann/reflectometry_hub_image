@@ -9,6 +9,11 @@ ENV PATH ${NB_PYTHON_PREFIX}/bin:$PATH
 RUN apt-get update -qq --yes > /dev/null && \
     apt-get install --yes -qq gnupg2 > /dev/null
 
+# GNSSREFL
+# build requirements
+RUN apt-get update && \
+  apt-get install -y gfortran python3-pip unzip wget vim
+
 USER ${NB_USER}
 
 COPY environment.yml /tmp/
