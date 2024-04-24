@@ -14,6 +14,8 @@ RUN apt-get update -qq --yes > /dev/null && \
 RUN apt-get update && \
   apt-get install -y gfortran python3-pip unzip wget vim
 
+RUN git clone https://github.com/s-watanabe-jhod/garpos.git
+
 USER ${NB_USER}
 
 COPY environment.yml /tmp/
